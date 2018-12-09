@@ -1,9 +1,9 @@
 /* CSS Document */
 @charset "utf-8";
 /* 全局 */
-body, div, dl, dt, dd, ,
+body, div, dl, dt, dd,
 h1, h2, h3, h4, h5, h6, pre, code,
-form, fieldset, legend, p,  {margin: 0;padding: 0;}
+form, fieldset, legend, p {margin: 0;padding: 0;}
 img {border: 0;}
 cite,em,strong,th{font-style: inherit;font-weight: inherit;}
 input,button,textarea,select{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}

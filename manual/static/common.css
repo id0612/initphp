@@ -1,9 +1,9 @@
 /* CSS Document */
 @charset "utf-8";
 /* 全局 */
-body, div, dl, dt, dd, ,
+body, div, dl, dt, dd,
 h1, h2, h3, h4, h5, h6, pre, code,
-form, fieldset, legend, p,  {margin: 0;padding: 0;}
+form, fieldset, legend, p {margin: 0;padding: 0;}
 img {border: 0;}
 cite,em,strong,th{font-style: inherit;font-weight: inherit;}
 input,button,textarea,select{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
@@ -24,11 +24,11 @@ body{ height:100%; font-size:12px; margin:20px; font-family: Lucida Grande,Verda
 .header_title{ float:left;font-size: 18px;font-weight: normal;color:#000000;}
 .header_right{ float:right;}
 .title { margin-top:10px; margin-bottom:10px;font-size: 14px;font-weight:bold; font-family: Arial,Sans-serif;
-    line-height: 1.3;
-    margin-top: 1.5em; color: #525D76;}
+         line-height: 1.3;
+         margin-top: 1.5em; color: #525D76;}
 h3{font-size: 14px;font-weight:bold; font-family: Arial,Sans-serif;
-    line-height: 1.3;
-    margin-top: 1.5em; color: #525D76;}
+   line-height: 1.3;
+   margin-top: 1.5em; color: #525D76;}
 .nav {margin-top:20px; margin-bottom:20px; border-bottom: 1px solid #D6E3F1;}
 ul { list-style:decimal; width:800px;}
 li span,p span{ color:#FF0000;}
@@ -39,8 +39,8 @@ table {
     border-width: 1px;
     border-color: #666666;
     border-collapse: collapse;
-	width:800px;
-	margin-left:2em;
+    width:800px;
+    margin-left:2em;
 }
 table th {
     border-width: 1px;
@@ -48,7 +48,7 @@ table th {
     border-style: solid;
     border-color: #666666;
     background-color: #dedede;
-	font-weight:bold;
+    font-weight:bold;
 }
 table td {
     border-width: 1px;
