@@ -40,16 +40,20 @@ class dbhandlerInit {
 			case 1: //主从模型 
 				$key = floor(mt_rand(1,(count($config) - 2)));
 				self::$dbArr[$this->dbModel]['master']['link_id'] = $this->db_connect($config[0], $driver);
+                self::$dbArr[$this->dbModel]['master']['database'] = $config[0]['database'];
 				self::$dbArr[$this->dbModel]['salver']['link_id'] = $this->db_connect($config[$key], $driver);
+                self::$dbArr[$this->dbModel]['salver']['database'] = $config[$key]['database'];
 				break;
-			
+
 			case 2: //随机模型
 				$key = floor(mt_rand(0,count($config) - 2));
 				self::$dbArr[$this->dbModel]['link_id'] = $this->db_connect($config[$key], $driver);
+                self::$dbArr[$this->dbModel]['database'] = $config[$key]['database'];
 				break;
-				
+
 			default: //默认单机模型
 				self::$dbArr[$this->dbModel]['link_id'] = $this->db_connect($config[0], $driver);
+                self::$dbArr[$this->dbModel]['database'] = $config[0]['database'];
 				break;
 		}
 		return true;
@@ -80,12 +84,20 @@ class dbhandlerInit {
 		if ($db_type == 1) { //主从 
 			if ($this->is_insert($sql)) {
 				$this->db->link_id = self::$dbArr[$this->dbModel]['master']['link_id'];
+                $database = self::$dbArr[$this->dbModel]['master']['database'];
 			} else {
 				$this->db->link_id = self::$dbArr[$this->dbModel]['salver']['link_id'];
+                $database = self::$dbArr[$this->dbModel]['salver']['database'];
 			}
 		} else {
 			$this->db->link_id = self::$dbArr[$this->dbModel]['link_id'];
+            $database = self::$dbArr[$this->dbModel]['database'];
 		}
+
+        if ('mysql' === $InitPHP_conf['db']['driver']) {
+            mysql_select_db($database, $this->db->link_id); // 切换数据库
+        }
+
 		return $this->db->link_id;
 	}
 
